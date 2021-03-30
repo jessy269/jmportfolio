@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow:800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*Background Image for home page*/
+.home {
+	background-color: #F48668;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 60vh;
+  background-color: black;
+}
+
+/*navigation Bar*/
+.container {
+   background-color: #95E821;
+    display: inline-flex;
+    width: 100vw;
+    padding: 0em;
+    justify-content: center;
+    position: absolute;
+    top: 35px;
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  font-size: 2em;
+  -webkit-text-stroke: 1px white;
+    color: transparent;
+  font-weight: 800;
+  text-decoration: none;
+  overflow: hidden;
+  padding-inline: 1em;
+  padding-top: .4em;
+  padding-bottom: .4em;
+  margin: 0em;
+}
+a span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 275ms ease;
+      padding: 0em;
+        margin: 13px 32px;
+}
+a span::before {
+  display: inline-block;
+  content: attr(data-content);
+  color: white;
+  transform: translateX(100%);
+  transition: transform 275ms ease;
+  text-decoration: none;
+}
+a:hover span {
+  transform: translateX(0);
+}
+a:hover span::before {
+  transform: translateX(0);
+}
+
+a:hover {
+-webkit-text-stroke: 0px white;
+animation-delay: 2s;
+}
+
+a:active {
+  color: white;
+    }
+
+
+@media (min-width: 40em) {
+  .home-button {
+    display: block;
+  }
+  .toggle {
+    display: none;
+  }
+  .mobile-nav {
+    display: none;
+  }
+}
+
+
+
+/*Test*/
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 320px;
+  justify-content: center;
+      padding-top: 6em;
+}
+
+.portfolio h2 {
+  flex-basis: 100%;
+  text-align: center;
+  margin: 50px auto 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.portfolio p {
+  color: white;
+   font-family: roboto;
+   font-weight: bold;
+}
+.card {
+  width: 25%;
+  overflow: hidden;
+  position: relative;
+}
+.card .content {
+  z-index: 2;
+  width: 100%;
+  position: absolute;
+  bottom: -100px;
+  transition: all 0.7s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 100px;
+  background: #2F1847;
+}
+.card .image {
+  z-index: 1;
+  height: 100%;
+}
+.card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.card:hover .content {
+  bottom: 0px;
+  color: #fff;
+}
+
+.card:hover .image img {
+  transform: scale(1.1);
+}
+
+
+
+
+/*title of card*/
+.card .content span:first-child {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  color:  #00B2CA;
+  font-size: 16px;
+}
+
+
+/*lil description*/
+.card .content span:last-child {
+  font-size: 14px;
+  color: #DD614A;
+  text-align: center;
+  font-weight: 700;
+}
+
+
+
+/*information page*/
+.box {
+  background-color: white;
+    position: relative;
+    margin: 150px;
+    top: 50px;
+    padding: 118px;
+}
+
+h2{
+  flex-basis: 100%;
+  text-align: center;
+  
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+h5{
+  color: black;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-align: center;
+  flex-basis: 100%;
+      margin-top: 14px;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+p {
+   color: #F48668;
+   font-family: roboto;
+   font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+  width: 50%;
+  }
+  .card .content {
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+  width: 100%;
+  }
+}
